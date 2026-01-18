@@ -12,3 +12,11 @@ jobs:
     steps:
       - run: echo "Hello from an inline bash script in a GitHub Action Workflow!"
       - run: echo "Hello ${{ env.Name }} from an inline bash script in a GitHub Action Workflow!"
+
+  Jobsecond:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "This is second job"
+      - run: echo "Hello ${{ env.Name }} from second job"
+      - run: echo ${{ github.event_name }}
+      - run: echo $HOSTNAME $PATH
