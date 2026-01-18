@@ -1,0 +1,14 @@
+name: testing some quick siva stuff
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+env:
+    Name: "Sivasobh"
+jobs:
+  siva-test-job:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "Hello from an inline bash script in a GitHub Action Workflow!"
+      - run: echo "Hello ${{ env.Name }} from an inline bash script in a GitHub Action Workflow!"
