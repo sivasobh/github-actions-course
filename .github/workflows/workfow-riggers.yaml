@@ -1,0 +1,18 @@
+# .github/workflows/triggers.yml
+name: Trigger Examples
+
+on:
+  push:
+    branches: ["*"]
+  pull_request:
+  schedule:
+    - cron: "0 0 * * *"   # daily midnight
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggered workflow!"
+      - run: echo "Event name: ${{ github.event_name }}"
+      - run: echo "Ref: ${{ github.ref }}"
